@@ -11,6 +11,14 @@
 
 This application is a GUI tool for communicating with I2C devices from Windows, using the FTDI FT232H chip as a USB-I2C bridge.
 
+## Recent Updates
+
+- **Clock Edge Simplification**: The I2C clock edge setting is now fixed to the standard Negative edge (per FTDI/I2C specs). The UI control was removed to avoid accidental non-standard configurations.
+- **Portable Build Support**: Added documented steps (see "Portable Build" section) for publishing a self-contained, single-file package that runs on target PCs without installing .NET.
+- **Delay Command**: Command sequences can now insert customizable delay operations (13–60000 ms) for precise timing between I2C transactions, including serialization/deserialization support.
+- **ACK Handling**: Improved ACK sampling logic during read cycles to ensure SDA is latched correctly and to expose ACK states in the command executor.
+- **Scan Device Fixes**: Address scanner refined to respect reserved address ranges, provide stable progress updates, and ignore transient bus errors for more reliable detection results.
+
 ## Key Features
 
 - ✅ **FT232H USB Connection**: Automatic detection and connection of FT232H devices
